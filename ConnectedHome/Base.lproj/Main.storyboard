@@ -86,9 +86,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Gdk-rC-RXI">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Gdk-rC-RXI">
                                 <rect key="frame" x="54" y="44" width="306.5" height="164"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Family Task Progression" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ci-fT-eV6">
                                         <rect key="frame" x="0.0" y="0.0" width="306.5" height="36"/>
@@ -96,14 +95,19 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zij-dq-Kzt">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zij-dq-Kzt">
                                         <rect key="frame" x="0.0" y="36" width="306.5" height="128"/>
                                     </imageView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Zij-dq-Kzt" secondAttribute="bottom" id="D38-3K-tAk"/>
+                                    <constraint firstItem="Zij-dq-Kzt" firstAttribute="top" secondItem="1ci-fT-eV6" secondAttribute="bottom" id="FJa-fO-0PM"/>
+                                    <constraint firstItem="Zij-dq-Kzt" firstAttribute="leading" secondItem="Gdk-rC-RXI" secondAttribute="leading" id="FxO-92-Cxz"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zij-dq-Kzt" secondAttribute="trailing" id="mLA-UM-s7g"/>
+                                </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="COt-er-HbY">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="COt-er-HbY">
                                 <rect key="frame" x="78" y="242" width="258.5" height="132.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emma Tasks Completed - 4 of 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAf-3Q-gIi">
                                         <rect key="frame" x="0.0" y="0.0" width="258.5" height="20.5"/>
@@ -134,9 +138,8 @@
                                     </progressView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="LWI-Cp-eC4">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="LWI-Cp-eC4">
                                 <rect key="frame" x="125" y="543" width="165" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1b-Cs-Dnu">
                                         <rect key="frame" x="0.0" y="0.0" width="76" height="30"/>
@@ -154,26 +157,44 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aix-tg-V7i">
+                                <rect key="frame" x="181" y="432" width="51" height="31"/>
+                                <connections>
+                                    <action selector="didPressSwitch:" destination="rrd-qu-RJh" eventType="valueChanged" id="USw-EP-qkz"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="COt-er-HbY" firstAttribute="top" secondItem="Gdk-rC-RXI" secondAttribute="bottom" constant="34" id="1Yo-fJ-603"/>
+                            <constraint firstItem="Gdk-rC-RXI" firstAttribute="leading" secondItem="C08-Jv-Hos" secondAttribute="leading" constant="54" id="30m-E1-xFz"/>
+                            <constraint firstItem="Aix-tg-V7i" firstAttribute="top" secondItem="COt-er-HbY" secondAttribute="bottom" constant="57.5" id="Et7-F9-hX0"/>
+                            <constraint firstItem="Gdk-rC-RXI" firstAttribute="top" secondItem="C08-Jv-Hos" secondAttribute="top" id="K2R-Ef-7eL"/>
+                            <constraint firstItem="Aix-tg-V7i" firstAttribute="leading" secondItem="C08-Jv-Hos" secondAttribute="leading" constant="181" id="KXQ-lq-Hvv"/>
+                            <constraint firstItem="C08-Jv-Hos" firstAttribute="trailing" secondItem="Gdk-rC-RXI" secondAttribute="trailing" constant="53.5" id="KpN-YX-VEq"/>
+                            <constraint firstItem="LWI-Cp-eC4" firstAttribute="top" secondItem="Aix-tg-V7i" secondAttribute="bottom" constant="80" id="YwP-nk-VDR"/>
+                            <constraint firstItem="Gdk-rC-RXI" firstAttribute="leading" secondItem="C08-Jv-Hos" secondAttribute="leading" constant="54" id="g3H-FR-soN"/>
+                            <constraint firstItem="C08-Jv-Hos" firstAttribute="trailing" secondItem="Gdk-rC-RXI" secondAttribute="trailing" constant="53.5" id="gmi-iH-Kq0"/>
+                            <constraint firstItem="C08-Jv-Hos" firstAttribute="trailing" secondItem="Aix-tg-V7i" secondAttribute="trailing" constant="184" id="zhh-WV-Wds"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="C08-Jv-Hos"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmR-Sn-wFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="rrd-qu-RJh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="624.63768115942037" y="132.58928571428572"/>
         </scene>
-        <!--View Controller-->
+        <!--Task View Controller-->
         <scene sceneID="fRl-cL-J6g">
             <objects>
-                <viewController id="GSU-nz-D0H" sceneMemberID="viewController">
+                <viewController id="GSU-nz-D0H" customClass="TaskViewController" customModule="ConnectedHome" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EoC-kp-bPG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kuu-vA-Zdg">
-                                <rect key="frame" x="54" y="44" width="306.5" height="164"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kuu-vA-Zdg">
+                                <rect key="frame" x="54" y="44" width="306.5" height="134"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKQ-I2-Ub0">
                                         <rect key="frame" x="0.0" y="0.0" width="306.5" height="36"/>
@@ -181,25 +202,33 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avE-4X-Q7r">
-                                        <rect key="frame" x="0.0" y="36" width="306.5" height="128"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="avE-4X-Q7r">
+                                        <rect key="frame" x="0.0" y="36" width="306.5" height="98"/>
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uR0-kg-cqU">
-                                <rect key="frame" x="20" y="229" width="258.5" height="425"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uR0-kg-cqU">
+                                <rect key="frame" x="20" y="199" width="258.5" height="485"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocW-rF-M2w">
+                                        <rect key="frame" x="0.0" y="0.0" width="258.5" height="30"/>
+                                        <state key="normal" title="Go Back"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbz-aw-zmx">
+                                        <rect key="frame" x="0.0" y="30" width="258.5" height="30"/>
+                                        <state key="normal" title="Tap to show Alert"/>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlP-N7-Kx2">
-                                        <rect key="frame" x="0.0" y="0.0" width="258.5" height="29"/>
+                                        <rect key="frame" x="0.0" y="60" width="258.5" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="fbr-CZ-e2F">
-                                        <rect key="frame" x="0.0" y="29" width="258.5" height="2"/>
+                                        <rect key="frame" x="0.0" y="89" width="258.5" height="2"/>
                                     </progressView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="nYU-Qe-ueJ">
-                                        <rect key="frame" x="0.0" y="31" width="258.5" height="106.5"/>
+                                        <rect key="frame" x="0.0" y="91" width="258.5" height="106.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take out the trash" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXS-9n-uRX">
                                                 <rect key="frame" x="0.0" y="0.0" width="137.5" height="20.5"/>
@@ -234,16 +263,16 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08Q-cy-bd4">
-                                        <rect key="frame" x="0.0" y="137.5" width="258.5" height="29"/>
+                                        <rect key="frame" x="0.0" y="197.5" width="258.5" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XZD-0R-lKv">
-                                        <rect key="frame" x="0.0" y="166.5" width="258.5" height="2"/>
+                                        <rect key="frame" x="0.0" y="226.5" width="258.5" height="2"/>
                                     </progressView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="TNz-ge-KFN">
-                                        <rect key="frame" x="0.0" y="168.5" width="258.5" height="123"/>
+                                        <rect key="frame" x="0.0" y="228.5" width="258.5" height="123"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yardwork" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDe-SI-VnG">
                                                 <rect key="frame" x="0.0" y="0.0" width="71.5" height="20.5"/>
@@ -284,16 +313,16 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sammie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pK7-Dg-5md">
-                                        <rect key="frame" x="0.0" y="291.5" width="258.5" height="29"/>
+                                        <rect key="frame" x="0.0" y="351.5" width="258.5" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.30000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="zHD-cP-6wU">
-                                        <rect key="frame" x="0.0" y="320.5" width="258.5" height="2"/>
+                                        <rect key="frame" x="0.0" y="380.5" width="258.5" height="2"/>
                                     </progressView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Wvf-Vk-H5S">
-                                        <rect key="frame" x="0.0" y="322.5" width="258.5" height="102.5"/>
+                                        <rect key="frame" x="0.0" y="382.5" width="258.5" height="102.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clean Fridge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVA-5b-nFk">
                                                 <rect key="frame" x="0.0" y="0.0" width="96.5" height="20.5"/>
@@ -330,19 +359,27 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZC6-u1-ABn">
-                                <rect key="frame" x="176" y="727" width="41" height="30"/>
+                                <rect key="frame" x="176" y="757" width="41" height="0.0"/>
                                 <state key="normal" title="Home"/>
                                 <connections>
-                                    <segue destination="7Ut-qT-KCW" kind="showDetail" id="GqD-q0-Ogc"/>
+                                    <segue destination="7Ut-qT-KCW" kind="showDetail" identifier="taskView" id="GqD-q0-Ogc"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ZC6-u1-ABn" firstAttribute="top" secondItem="uR0-kg-cqU" secondAttribute="bottom" constant="73" id="0Jp-Ht-3RI"/>
+                            <constraint firstItem="uR0-kg-cqU" firstAttribute="leading" secondItem="BME-cX-iNM" secondAttribute="leading" constant="20" id="943-aL-0fW"/>
                             <constraint firstItem="BME-cX-iNM" firstAttribute="trailing" secondItem="ZC6-u1-ABn" secondAttribute="trailing" constant="197" id="EqK-X2-8wp"/>
+                            <constraint firstItem="uR0-kg-cqU" firstAttribute="top" secondItem="kuu-vA-Zdg" secondAttribute="bottom" constant="21" id="HpW-o5-4K4"/>
                             <constraint firstItem="BME-cX-iNM" firstAttribute="bottom" secondItem="ZC6-u1-ABn" secondAttribute="bottom" constant="105" id="J3U-hr-UcU"/>
                             <constraint firstItem="ZC6-u1-ABn" firstAttribute="top" secondItem="uR0-kg-cqU" secondAttribute="bottom" constant="73" id="PEd-fY-emo"/>
                             <constraint firstItem="ZC6-u1-ABn" firstAttribute="leading" secondItem="BME-cX-iNM" secondAttribute="leading" constant="176" id="bW9-7r-ErY"/>
+                            <constraint firstItem="kuu-vA-Zdg" firstAttribute="top" secondItem="BME-cX-iNM" secondAttribute="top" id="eaD-OR-a2W"/>
+                            <constraint firstItem="BME-cX-iNM" firstAttribute="trailing" secondItem="uR0-kg-cqU" secondAttribute="trailing" constant="135.5" id="gb6-sX-THP"/>
+                            <constraint firstItem="BME-cX-iNM" firstAttribute="trailing" secondItem="kuu-vA-Zdg" secondAttribute="trailing" constant="53.5" id="rla-ss-O9K"/>
+                            <constraint firstItem="kuu-vA-Zdg" firstAttribute="leading" secondItem="BME-cX-iNM" secondAttribute="leading" constant="54" id="xSU-56-DUA"/>
+                            <constraint firstItem="uR0-kg-cqU" firstAttribute="top" secondItem="kuu-vA-Zdg" secondAttribute="bottom" constant="21" id="zYt-ef-B6J"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BME-cX-iNM"/>
                     </view>
@@ -359,7 +396,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Create Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFw-Xa-jbf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFw-Xa-jbf">
                                 <rect key="frame" x="132" y="44" width="151" height="36"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
@@ -417,11 +454,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Xfh-0G-wCT" firstAttribute="leading" secondItem="ZU2-8h-ah2" secondAttribute="leading" constant="20" id="5Px-Ha-xvw"/>
+                            <constraint firstItem="ZU2-8h-ah2" firstAttribute="trailing" secondItem="bFw-Xa-jbf" secondAttribute="trailing" constant="131" id="DNb-F3-GvR"/>
                             <constraint firstItem="sqY-uq-Gyi" firstAttribute="top" secondItem="Xfh-0G-wCT" secondAttribute="bottom" constant="476" id="EOT-Kq-Z5h"/>
                             <constraint firstItem="Xfh-0G-wCT" firstAttribute="top" secondItem="bFw-Xa-jbf" secondAttribute="bottom" constant="8" id="Ja4-oQ-aqM"/>
                             <constraint firstItem="ZU2-8h-ah2" firstAttribute="trailing" secondItem="sqY-uq-Gyi" secondAttribute="trailing" constant="186" id="LlB-Ro-292"/>
+                            <constraint firstItem="bFw-Xa-jbf" firstAttribute="top" secondItem="ZU2-8h-ah2" secondAttribute="top" id="Mba-nx-X1Q"/>
                             <constraint firstItem="sqY-uq-Gyi" firstAttribute="leading" secondItem="ZU2-8h-ah2" secondAttribute="leading" constant="187" id="Mtu-IC-Vhm"/>
+                            <constraint firstItem="bFw-Xa-jbf" firstAttribute="leading" secondItem="ZU2-8h-ah2" secondAttribute="leading" constant="132" id="VE4-7e-foD"/>
                             <constraint firstItem="ZU2-8h-ah2" firstAttribute="trailing" secondItem="Xfh-0G-wCT" secondAttribute="trailing" constant="195" id="bNB-3Y-HZv"/>
+                            <constraint firstItem="Xfh-0G-wCT" firstAttribute="top" secondItem="bFw-Xa-jbf" secondAttribute="bottom" constant="8" id="cVD-Xc-Rco"/>
                             <constraint firstItem="sqY-uq-Gyi" firstAttribute="top" secondItem="Xfh-0G-wCT" secondAttribute="bottom" constant="476" id="dMz-fT-FhT"/>
                             <constraint firstItem="ZU2-8h-ah2" firstAttribute="bottom" secondItem="sqY-uq-Gyi" secondAttribute="bottom" constant="110" id="pb0-05-Chc"/>
                         </constraints>

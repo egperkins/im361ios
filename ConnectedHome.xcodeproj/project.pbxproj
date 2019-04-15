@@ -14,6 +14,7 @@
 		5EFFCF1B225E9A5600CB3420 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EFFCF19225E9A5600CB3420 /* LaunchScreen.storyboard */; };
 		5EFFCF26225E9A5600CB3420 /* ConnectedHomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFFCF25225E9A5600CB3420 /* ConnectedHomeTests.swift */; };
 		5EFFCF31225E9A5600CB3420 /* ConnectedHomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFFCF30225E9A5600CB3420 /* ConnectedHomeUITests.swift */; };
+		5EFFCF3F2265465300CB3420 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFFCF3E2265465300CB3420 /* TaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		5EFFCF2C225E9A5600CB3420 /* ConnectedHomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConnectedHomeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EFFCF30225E9A5600CB3420 /* ConnectedHomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedHomeUITests.swift; sourceTree = "<group>"; };
 		5EFFCF32225E9A5600CB3420 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EFFCF3E2265465300CB3420 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				5EFFCF17225E9A5600CB3420 /* Assets.xcassets */,
 				5EFFCF19225E9A5600CB3420 /* LaunchScreen.storyboard */,
 				5EFFCF1C225E9A5600CB3420 /* Info.plist */,
+				5EFFCF3E2265465300CB3420 /* TaskViewController.swift */,
 			);
 			path = ConnectedHome;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			files = (
 				5EFFCF13225E9A5500CB3420 /* ViewController.swift in Sources */,
 				5EFFCF11225E9A5500CB3420 /* AppDelegate.swift in Sources */,
+				5EFFCF3F2265465300CB3420 /* TaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

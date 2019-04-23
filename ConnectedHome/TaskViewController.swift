@@ -13,8 +13,4 @@ class TaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    @IBAction func didGoBack(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
 }

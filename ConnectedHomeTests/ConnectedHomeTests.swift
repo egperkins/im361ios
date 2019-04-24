@@ -22,6 +22,10 @@ class ConnectedHomeTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let child = Child(name: "Addy", age: 12, height: 123.321)
+        XCTAssertEqual("Addy", child.name)
+        
     }
 
     func testPerformanceExample() {

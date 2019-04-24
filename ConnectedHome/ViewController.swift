@@ -8,6 +8,17 @@
 
 import UIKit
 
+struct Child{
+    let name: String
+    let age: Int
+    let height: Float
+}
+
+
+
+
+
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {

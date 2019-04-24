@@ -29,6 +29,18 @@ class ConnectedHomeUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        
+        let app = XCUIApplication()
+        app.buttons["Submit"].tap()
+        app.buttons["View Tasks"].tap()
+        
+        let homeButton = app.buttons["Home"]
+        homeButton.tap()
+        app.buttons["Create Tasks"].tap()
+        homeButton.tap()
+                
+        
     }
 
 }
